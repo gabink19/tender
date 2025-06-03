@@ -38,15 +38,15 @@ return array (
   ),
   'jobs' => 
   array (
-    'jobTitle' => 'Job Title',
-    'jobDescription' => 'Job Description',
-    'jobRequirement' => 'Job Requirement',
+    'jobTitle' => 'Project Title',
+    'jobDescription' => 'Project Description',
+    'jobRequirement' => 'Project Requirement',
     'totalPositions' => 'Total Positions',
     'metaTitle' => 'Meta Title',
     'metaDescription' => 'Meta Description',
     'sectionVisibility' => 'Section Visibility',
     'profileImage' => 'Profile Image',
-    'jobType' => 'Job Type',
+    'jobType' => 'Project Type',
     'workExperience' => 'Work Experience',
     'showPayBy' => 'Show Pay By',
     'range' => 'Range',
@@ -62,17 +62,17 @@ return array (
     'resume' => 'Resume',
     'coverLetter' => 'Cover Letter',
     'termsAndConditions' => 'Terms And Conditions',
-    'showJobType' => 'Show Job Type In Front',
+    'showJobType' => 'Show Project Type In Front',
     'showWorkExperience' => 'Show Work Experience In Front',
     'showSalary' => 'Show Salary In Front',
   ),
   'front' => 
   array (
-    'jobOpenings' => 'Job Openings',
+    'jobOpenings' => 'Project Openings',
     'visitMainWebsite' => 'Visit Main Website',
     'homeHeader' => 'Working at Froiden !',
-    'applyForJob' => 'Apply for this Job',
-    'shareJob' => 'Share this job opening',
+    'applyForJob' => 'Apply for this Project',
+    'shareJob' => 'Share this Project opening',
     'applicationForm' => 'Application Form',
     'personalInformation' => 'Personal Information',
     'fullName' => 'Your Full Name(Required)',
@@ -115,7 +115,7 @@ return array (
     'appliedAt' => 'Applied at',
     'appliedFor' => 'Applied For',
     'status' => 'Status',
-    'job' => 'Job',
+    'job' => 'Project',
     'location' => 'Location',
     'startDate' => 'Start Date',
     'sendDate' => 'End Date',
@@ -124,8 +124,8 @@ return array (
     'all' => 'All',
     'allStatus' => 'All Status',
     'allLocation' => 'All Location',
-    'allJobs' => 'All Jobs',
-    'selectJob' => 'Select Job',
+    'allJobs' => 'All Projects',
+    'selectJob' => 'Select Project',
     'applicantNotes' => 'Applicant Notes',
     'addNote' => 'Add Note',
     'boardView' => 'Board View',
@@ -171,9 +171,9 @@ return array (
     'totalCompanies' => 'Total Companies',
     'activeCompanies' => 'Active Companies',
     'inactiveCompanies' => 'Inactive Companies',
-    'totalJobs' => 'Total Jobs',
-    'activeJobs' => 'Active Jobs',
-    'inactiveJobs' => 'Inactive Jobs',
+    'totalJobs' => 'Total Projects',
+    'activeJobs' => 'Active Projects',
+    'inactiveJobs' => 'Inactive Projects',
   ),
   'update' => 
   array (
@@ -198,7 +198,7 @@ return array (
     'addInterviewSchedule' => 'Add Interview Schedule',
     'appliedFor' => 'Applied For',
     'status' => 'Status',
-    'job' => 'Job',
+    'job' => 'Project',
     'assignedEmployee' => 'Assigned Employee',
     'employeeResponse' => 'Employee Response',
     'calendar' => 'Calendar',
@@ -328,7 +328,7 @@ return array (
     'selectAllApplicants' => 'Select all :totalApplicants applicants',
     'clearSelection' => 'Clear selection',
     'selectMailStatus' => 'Select email status',
-    'selectJob' => 'Select Job',
+    'selectJob' => 'Select Project',
   ),
   'linkedInSettings' => 
   array (
@@ -414,11 +414,11 @@ return array (
   ),
   'report' => 
   array (
-    'jobapplication' => 'Job Application',
-    'job' => 'Job Posted',
+    'jobapplication' => 'Project Application',
+    'job' => 'Project Posted',
     'candidatehired' => 'Candidate Hired',
     'interviewschedule' => 'Interview Schedule',
-    'jobapplicationstatus' => 'Job Application Status'
+    'jobapplicationstatus' => 'Project Application Status'
   ),
   'currency'=>
   array (

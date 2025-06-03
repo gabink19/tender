@@ -19,7 +19,7 @@ return array (
   'nexmoSecretRequired' => 'Nexmo Secret is required for Active Status',
   'nexmoFromRequired' => 'Nexmo From is required for Active Status',
   'archiveWarning' => 'You can view archived application in Candidate Database. Do you want to archive it?',
-  'addLocations' => 'Job Location cannot be blank.',
+  'addLocations' => 'Project Location cannot be blank.',
   'unarchiveWarning' => 'Do you want to unarchive it?',
   'sendRejectedNotification' => 'Do you want to send rejecting confirmation to candidate',
   'deleteStatusWarning' => 'The applications in this column will be moved to Candidate Database!',

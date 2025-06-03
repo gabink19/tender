@@ -38,15 +38,15 @@ return array (
   ),
   'jobs' => 
   array (
-    'jobTitle' => 'Judul pekerjaan',
+    'jobTitle' => 'Judul Project',
     'jobDescription' => 'Uraian Tugas',
-    'jobRequirement' => 'Persyaratan pekerjaan',
+    'jobRequirement' => 'Persyaratan Project',
     'totalPositions' => 'Jumlah Posisi',
     'metaTitle' => 'Judul Meta',
     'metaDescription' => 'Deskripsi meta',
     'sectionVisibility' => 'Visibilitas Bagian',
     'profileImage' => 'Gambar profil',
-    'jobType' => 'Jenis pekerjaan',
+    'jobType' => 'Jenis Project',
     'workExperience' => 'Pengalaman kerja',
     'showPayBy' => 'Tampilkan Bayar Dengan',
     'range' => 'Jangkauan',
@@ -62,7 +62,7 @@ return array (
     'resume' => 'Melanjutkan',
     'coverLetter' => 'Sampul surat',
     'termsAndConditions' => 'Syarat dan Ketentuan',
-    'showJobType' => 'Tampilkan Jenis Pekerjaan Di Depan',
+    'showJobType' => 'Tampilkan Jenis Project Di Depan',
     'showWorkExperience' => 'Tunjukkan Pengalaman Kerja Di Depan',
     'showSalary' => 'Tunjukkan Gaji Di Depan',
   ),
@@ -71,8 +71,8 @@ return array (
     'jobOpenings' => 'Lowongan Kerja',
     'visitMainWebsite' => 'Kunjungi Situs Web Utama',
     'homeHeader' => 'Bekerja di Froiden !',
-    'applyForJob' => 'Lamar Pekerjaan ini',
-    'shareJob' => 'Bagikan lowongan pekerjaan ini',
+    'applyForJob' => 'Lamar Project ini',
+    'shareJob' => 'Bagikan lowongan Project ini',
     'applicationForm' => 'Formulir aplikasi',
     'personalInformation' => 'Informasi pribadi',
     'fullName' => 'Nama Lengkap Anda(Wajib diisi)',
@@ -85,7 +85,7 @@ return array (
     'submitApplication' => 'Mengajukan permohonan',
     'applySuccessMsg' => 'Anda telah berhasil melamar posisi ini. Kami akan segera menghubungi Anda kembali :)',
     'jobOpeningHeading' => 'Bekerja di Froiden !',
-    'jobOpeningText' => 'Kami ingin orang-orang berkembang di Froiden; <br>kami percaya Anda melakukan pekerjaan terbaik Anda saat Anda merasa yang terbaik.',
+    'jobOpeningText' => 'Kami ingin orang-orang berkembang di Froiden; <br>kami percaya Anda melakukan Project terbaik Anda saat Anda merasa yang terbaik.',
     'questions' => 'Pertanyaan',
     'additionalDetails' => 'Detil tambahan',
     'resumeFileType' => 'Kami menerima file JPEG, JPG, PNG, DOC, DOCX, RTF, XLS, XLSX dan PDF',
@@ -115,7 +115,7 @@ return array (
     'appliedAt' => 'Diterapkan pada',
     'appliedFor' => 'Diterapkan untuk',
     'status' => 'Status',
-    'job' => 'Pekerjaan',
+    'job' => 'Project',
     'location' => 'Lokasi',
     'startDate' => 'Mulai tanggal',
     'sendDate' => 'Tanggal Akhir',
@@ -124,8 +124,8 @@ return array (
     'all' => 'Semua',
     'allStatus' => 'Semua Status',
     'allLocation' => 'Semua Lokasi',
-    'allJobs' => 'Semua Pekerjaan',
-    'selectJob' => 'Pilih Pekerjaan',
+    'allJobs' => 'Semua Project',
+    'selectJob' => 'Pilih Project',
     'applicantNotes' => 'Catatan Pemohon',
     'addNote' => 'Menambahkan catatan',
     'boardView' => 'Tampilan Papan',
@@ -171,9 +171,9 @@ return array (
     'totalCompanies' => 'Jumlah Perusahaan',
     'activeCompanies' => 'Perusahaan Aktif',
     'inactiveCompanies' => 'Perusahaan Tidak Aktif',
-    'totalJobs' => 'Jumlah Pekerjaan',
-    'activeJobs' => 'Pekerjaan Aktif',
-    'inactiveJobs' => 'Pekerjaan Tidak Aktif',
+    'totalJobs' => 'Jumlah Project',
+    'activeJobs' => 'Project Aktif',
+    'inactiveJobs' => 'Project Tidak Aktif',
   ),
   'update' => 
   array (
@@ -198,7 +198,7 @@ return array (
     'addInterviewSchedule' => 'Tambah Jadwal Wawancara',
     'appliedFor' => 'Dimohon Untuk',
     'status' => 'Status',
-    'job' => 'Pekerjaan',
+    'job' => 'Project',
     'assignedEmployee' => 'Karyawan yang Ditugaskan',
     'employeeResponse' => 'Respons Karyawan',
     'calendar' => 'Kalender',
@@ -328,7 +328,7 @@ return array (
     'selectAllApplicants' => 'Pilih semua :totalPemohon pelamar',
     'clearSelection' => 'Hapus pilihan',
     'selectMailStatus' => 'Pilih status email',
-    'selectJob' => 'Pilih Pekerjaan',
+    'selectJob' => 'Pilih Project',
   ),
   'linkedInSettings' => 
   array (
@@ -414,11 +414,11 @@ return array (
   ),
   'report' => 
   array (
-    'jobapplication' => 'Lamaran pekerjaan',
-    'job' => 'Pekerjaan Diposting',
+    'jobapplication' => 'Lamaran Project',
+    'job' => 'Project Diposting',
     'candidatehired' => 'Kandidat Dipekerjakan',
     'interviewschedule' => 'Jadwal Wawancara',
-    'jobapplicationstatus' => 'Status Lamaran Pekerjaan'
+    'jobapplicationstatus' => 'Status Lamaran Project'
   ),
   'currency'=>
   array (
