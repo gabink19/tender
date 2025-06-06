@@ -66,7 +66,10 @@ class FrontJobsController extends FrontBaseController
         }
 
         $this->metaImage = $this->global->logo_url;
-        $this->jobs = Job::activeJobs()->take($this->perPage);
+        // $this->jobs = Job::activeJobs()->take($this->perPage);
+        $this->jobs = Job::openProjects();
+        $this->runPrj = Job::runningProjects();
+        $this->finPrj = Job::finishedProjects();
 
         $this->jobCount = Job::activeJobs()->count();
         $this->locations = JobLocation::all();
@@ -169,6 +172,9 @@ class FrontJobsController extends FrontBaseController
 
          $this->metaImage = $this->job->company->logo_url;
         $this->pageUrl = request()->url();
+
+        $this->candidates = JobApplication::where('job_id', $this->job->id)
+              ->get();
         return view('front.job-detail', $this->data);
     }
 
@@ -318,8 +324,8 @@ class FrontJobsController extends FrontBaseController
         if($request->has('apply_type')){
             $linkedin = true;
         }
-        Notification::send($users, new NewJobApplication($jobApplication, $linkedin));
-        Mail::send(new ReceivedApplication($jobApplication, $global));
+        // Notification::send($users, new NewJobApplication($jobApplication, $linkedin));
+        // Mail::send(new ReceivedApplication($jobApplication, $global));
 
         return Reply::dataOnly(['status' => 'success', 'msg' => __('modules.front.applySuccessMsg')]);
     }

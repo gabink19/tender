@@ -16,7 +16,9 @@
 .has-error .form-control {
    border-color: #ff0000;
 }
-
+.form-control {
+    color: black !important;
+}
 </style>
 @section('header-text')
     <h1 class="hidden-sm-down text-white fs-40 mb-10">{{ ucwords($job->title) }}</h1>
@@ -72,7 +74,7 @@
 
                 <div class="form-group">
                     <input class="form-control form-control-lg" type="email" name="email"
-                            placeholder="@lang('modules.front.email')" value="@if($user) {{ $user->email }} @endif">
+                            placeholder="@lang('modules.front.email')" value="@if($user) {{ $user->email }} @endif" required>
                 </div>
 
                 <div class="form-group">

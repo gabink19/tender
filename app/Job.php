@@ -59,6 +59,26 @@ class Job extends Model
             ->get();
     }
 
+    public static function openProjects(){
+        return Job::where('start_date', '<=', Carbon::now()->format('Y-m-d'))
+            ->where('end_date', '>=', Carbon::now()->format('Y-m-d'))
+            ->get();
+    }
+
+    public static function runningProjects(){
+        return Job::where('status', 'active')
+            ->where('end_date', '<', Carbon::now()->format('Y-m-d'))
+            ->get();
+    }
+
+    public static function finishedProjects(){
+        return Job::where('status', 'active')
+            ->where('end_date', '<', Carbon::now()->format('Y-m-d'))
+            ->leftJoin('job_applications', 'jobs.id', '=', 'job_applications.job_id')
+            ->where('status_id', '4')
+            ->get();
+    }
+
     public static function activeJobsCount(){
         return Job::where('status', 'active')
             ->where('start_date', '<=', Carbon::now()->format('Y-m-d'))

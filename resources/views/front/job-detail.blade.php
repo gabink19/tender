@@ -12,6 +12,30 @@
         }
     }
 
+    .carousel-cell {
+        width: 250px !important;
+        margin-right: 5px;
+    }
+    .flickity-button.next {
+        /* display: none !important; */
+        margin-right: -20px;
+    }
+    .flickity-button.previous {
+        margin-left: -10px;
+        /* display: none !important; */
+    }
+    .flickity-page-dots {
+        /* display: none !important; */
+    }
+    .section-header hr {
+        width: 100px !important;
+        margin-top: 3px !important;
+        margin-bottom: 1.5rem !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border-top: 2px solid #0f0f0f !important;
+    }
+
 </style>
 @section('header-text')
     <h1 class="hidden-sm-down text-white fs-40 mb-10">{{ ucwords($job->title) }}</h1>
@@ -64,6 +88,29 @@
 
                         </div>
 
+                    </div>
+                    
+                    <header class="section-header" style="margin-top: 20px;margin-bottom: -10px; max-width: 100% !important; text-align: left;">
+                        <h4>Candidates :</h4>
+                        <hr>
+                    </header>
+                    <div class="carousel" id="detailsCandidate" style="margin-top: 20px;" data-flickity='{ "wrapAround": true, "pageDots": true, "cellAlign": "center", "contain": true }'>
+                        @forelse($candidates as $candidate)
+                            <div class="carousel-cell col-12 col-md-6 col-lg-4 portfolio-2 job-list" data-shuffle="item" data-groups="{{ $job->location->location.','.$job->category->name }}">
+                                <div class="card card-bordered">
+                                    <div class="card-block">
+                                        <h5 class="card-title mb-0">{{ ucwords($candidate->full_name) }}</h5>
+                                        <small class="company-title mb-50"></small>
+                                        <div class="d-flex flex-wrap justify-content-between card-location">
+                                            <span class="fw-400 fs-14"><i class="mr-5 fa fa-map-marker"></i></span>
+                                            <span class="fw-400 fs-14"><i class="ml-5 fa fa-graduation-cap"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+                            <h4 id ="no-data" class="mx-auto mt-50 mb-40 card-title mb-0" >@lang('modules.front.noData') </h4>
+                        @endforelse
                     </div>
                
             </div>
@@ -140,10 +187,24 @@
                     @endif
                     @endif
 
-                    <div class="p-30">  
-                        <a class="btn btn-block btn-primary theme-background"
-                       href="{{ route('jobs.jobApply', $job->slug) }}">@lang('modules.front.applyForJob')</a>
+                    <div class="p-30">
+                        <a class="btn btn-block btn-primary theme-background w-100"
+                           href="{{ route('jobs.jobApply', $job->slug) }}"
+                           style="white-space: normal; word-break: break-word; font-size: 1rem; padding: 0.75rem 1rem;">
+                            @lang('modules.front.applyForJob')
+                        </a>
                     </div>
+                    <style>
+                        @media (max-width: 767px) {
+                            .sidebar .btn {
+                                font-size: 0.95rem;
+                                padding: 0.65rem 0.75rem;
+                            }
+                            .sidebar .p-30 {
+                                padding: 15px !important;
+                            }
+                        }
+                    </style>
 
                     
 
@@ -179,3 +240,21 @@
 </section>
 @endsection
 
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var $carousel = $('#detailsCandidate');
+    // Destroy jika sudah pernah diinisialisasi
+    if ($carousel.data('flickity')) {
+        $carousel.flickity('destroy');
+    }
+    $carousel.flickity({
+        wrapAround: true,
+        pageDots: true,
+        cellAlign: 'center',
+        contain: true
+    });
+});
+</script>
