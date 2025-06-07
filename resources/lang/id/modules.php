@@ -47,7 +47,7 @@ return array (
     'sectionVisibility' => 'Visibilitas Bagian',
     'profileImage' => 'Gambar profil',
     'jobType' => 'Jenis Project',
-    'workExperience' => 'Pengalaman kerja',
+    'workExperience' => 'Pengalaman project',
     'showPayBy' => 'Tampilkan Bayar Dengan',
     'range' => 'Jangkauan',
     'startingSalary' => 'Gaji awal',
