@@ -92,7 +92,7 @@
                 <div class="carousel" id="openingProjects" data-flickity='{ "wrapAround": true, "pageDots": true, "cellAlign": "left", "contain": true }'>
                     @forelse($jobs as $job)
                         <div class="carousel-cell col-12 col-md-6 col-lg-4 portfolio-2 job-list" data-shuffle="item" data-groups="{{ $job->location->location.','.$job->category->name }}">
-                            <a href="{{ route('jobs.jobDetail', [$job->slug]) }}" class="job-opening-card">
+                            <a href="{{ route('jobs.jobDetail', [$job->id]) }}" class="job-opening-card">
                             <div class="card card-bordered">
                                 <div class="card-block">
 
@@ -132,7 +132,7 @@
                 <div class="carousel" id="runningProjects" data-flickity='{ "wrapAround": true, "pageDots": true, "cellAlign": "left", "contain": true }'>
                     @forelse($runPrj as $job)
                         <div class="carousel-cell col-12 col-md-6 col-lg-4 portfolio-2 job-list" data-shuffle="item" data-groups="{{ $job->location->location.','.$job->category->name }}">
-                            <a href="{{ route('jobs.jobDetail', [$job->slug]) }}" class="job-running-card">
+                            <a href="{{ route('jobs.jobDetail', [$job->id]) }}" class="job-running-card">
                             <div class="card card-bordered">
                                 <div class="card-block">
 
@@ -172,7 +172,7 @@
                 <div class="carousel" id="finishedProjects" data-flickity='{ "wrapAround": true, "pageDots": true, "cellAlign": "left", "contain": true }'>
                     @forelse($finPrj as $job)
                         <div class="carousel-cell col-12 col-md-6 col-lg-4 portfolio-2 job-list" data-shuffle="item" data-groups="{{ $job->location->location.','.$job->category->name }}">
-                            <a href="{{ route('jobs.jobDetail', [$job->slug]) }}" class="job-finished-card">
+                            <a href="{{ route('jobs.jobDetail', [$job->id]) }}" class="job-finished-card">
                             <div class="card card-bordered">
                                 <div class="card-block">
 

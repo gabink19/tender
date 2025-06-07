@@ -148,17 +148,18 @@ class FrontJobsController extends FrontBaseController
     }
 
     /**
-     * @param $slug
+     * @param $jobId
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function jobDetail($slug)
+    public function jobDetail($jobId)
     {
-        $this->job = Job::with(['workExperience', 'jobType'])->where('slug', $slug)
-            ->whereDate('start_date', '<=', Carbon::now())  
-            ->whereDate('end_date', '>=', Carbon::now())
-            ->where('status', 'active')
+        $this->job = Job::with(['workExperience', 'jobType'])->where('id', $jobId)
+            // ->whereDate('start_date', '<=', Carbon::now())  
+            // ->whereDate('end_date', '>=', Carbon::now())
+            // ->where('status', 'active')
             ->firstOrFail();
-            Session::put('lastPageUrl', $slug);
+
+            Session::put('lastPageUrl', $jobId);
         $this->pageTitle = $this->job->title . ' - ' . $this->companyName;
         $this->metaTitle = "";
         $this->metaDescription = "";
@@ -211,13 +212,13 @@ class FrontJobsController extends FrontBaseController
     }
 
     /**
-     * @param $slug
+     * @param $jobId
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function jobApply($slug)
+    public function jobApply($jobId)
     {
 
-        $this->job = Job::where('slug', $slug)->where('status', 'active')->first();
+        $this->job = Job::where('id', $jobId)->where('status', 'active')->first();
         
         abort_if(!$this->job, 404);
 

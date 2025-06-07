@@ -208,10 +208,10 @@
                     @endif
                     @endif
 
-                    @if($job->end_date < now())
+                    @if($job->end_date > now())
                     <div class="p-30">
                         <a class="btn btn-block btn-primary theme-background w-100"
-                           href="{{ route('jobs.jobApply', $job->slug) }}"
+                           href="{{ route('jobs.jobApply', $job->id) }}"
                            style="white-space: normal; word-break: break-word; font-size: 1rem; padding: 0.75rem 1rem;">
                             @lang('modules.front.applyForJob')
                         </a>
