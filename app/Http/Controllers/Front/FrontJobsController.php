@@ -174,7 +174,9 @@ class FrontJobsController extends FrontBaseController
         $this->pageUrl = request()->url();
 
         $this->candidates = JobApplication::where('job_id', $this->job->id)
-              ->get();
+                ->leftJoin('application_status', 'job_applications.status_id', '=', 'application_status.position')
+                ->select('job_applications.*', 'application_status.status as application_status', 'application_status.color as application_color')
+                ->get();
         return view('front.job-detail', $this->data);
     }
 

@@ -94,24 +94,45 @@
                         <h4>Candidates :</h4>
                         <hr>
                     </header>
-                    <div class="carousel" id="detailsCandidate" style="margin-top: 20px;" data-flickity='{ "wrapAround": true, "pageDots": true, "cellAlign": "center", "contain": true }'>
-                        @forelse($candidates as $candidate)
-                            <div class="carousel-cell col-12 col-md-6 col-lg-4 portfolio-2 job-list" data-shuffle="item" data-groups="{{ $job->location->location.','.$job->category->name }}">
-                                <div class="card card-bordered">
-                                    <div class="card-block">
-                                        <h5 class="card-title mb-0">{{ ucwords($candidate->full_name) }}</h5>
-                                        <small class="company-title mb-50"></small>
-                                        <div class="d-flex flex-wrap justify-content-between card-location">
-                                            <span class="fw-400 fs-14"><i class="mr-5 fa fa-map-marker"></i></span>
-                                            <span class="fw-400 fs-14"><i class="ml-5 fa fa-graduation-cap"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <h4 id ="no-data" class="mx-auto mt-50 mb-40 card-title mb-0" >@lang('modules.front.noData') </h4>
-                        @endforelse
-                    </div>
+                    <table id="candidatesTable" class="table table-bordered table-striped" style="margin-top: 20px; width:100%;">
+                        <thead>
+                            <tr>
+                                <th>Company Name</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($candidates as $candidate)
+                                <tr>
+                                    <td>{{ ucwords($candidate->full_name) }}</td>
+                                    <td>
+                                        <span class="badge" style="background-color:{{$candidate->application_color}};">{{ ucwords($candidate->application_status) }}</span>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="3" class="text-center">@lang('modules.front.noData')</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+
+                    <!-- DataTables CSS & JS -->
+                    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+                    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            $('#candidatesTable').DataTable({
+                                "ordering": true,
+                                "searching": true,
+                                "paging": true,
+                                "info": false,
+                                "language": {
+                                    "emptyTable": "@lang('modules.front.noData')"
+                                }
+                            });
+                        });
+                    </script>
                
             </div>
 
@@ -187,6 +208,7 @@
                     @endif
                     @endif
 
+                    @if($job->end_date < now())
                     <div class="p-30">
                         <a class="btn btn-block btn-primary theme-background w-100"
                            href="{{ route('jobs.jobApply', $job->slug) }}"
@@ -194,6 +216,7 @@
                             @lang('modules.front.applyForJob')
                         </a>
                     </div>
+                    @endif
                     <style>
                         @media (max-width: 767px) {
                             .sidebar .btn {
